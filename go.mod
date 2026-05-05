@@ -61,6 +61,7 @@ require (
 	github.com/openbao/go-kms-wrapping/wrappers/azurekeyvault/v2 v2.4.0
 	github.com/openbao/go-kms-wrapping/wrappers/gcpckms/v2 v2.3.0
 	github.com/openbao/go-kms-wrapping/wrappers/ocikms/v2 v2.3.0
+	github.com/openbao/go-kms-wrapping/wrappers/okms/v2 v2.0.0-00010101000000-000000000000
 	github.com/openbao/go-kms-wrapping/wrappers/pkcs11/v2 v2.6.0
 	github.com/openbao/go-kms-wrapping/wrappers/tcloudpublickms/v2 v2.0.0
 	github.com/openbao/openbao/api/v2 v2.5.1
@@ -99,6 +100,7 @@ require (
 	github.com/AzureAD/microsoft-authentication-library-for-go v1.3.3 // indirect
 	github.com/Microsoft/go-winio v0.6.2 // indirect
 	github.com/aliyun/alibaba-cloud-sdk-go v1.63.12 // indirect
+	github.com/apapsch/go-jsonmerge/v2 v2.0.0 // indirect
 	github.com/armon/go-metrics v0.4.1 // indirect
 	github.com/armon/go-radix v1.0.0 // indirect
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream v1.7.8 // indirect
@@ -193,6 +195,8 @@ require (
 	github.com/opentelekomcloud/gophertelekomcloud v0.9.5 // indirect
 	github.com/opentracing/opentracing-go v1.2.1-0.20220228012449-10b1cf09e00b // indirect
 	github.com/oracle/oci-go-sdk/v60 v60.0.0 // indirect
+	github.com/ovh/kmip-go v0.3.3 // indirect
+	github.com/ovh/okms-sdk-go v0.5.2 // indirect
 	github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
