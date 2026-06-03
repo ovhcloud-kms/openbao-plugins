@@ -8,6 +8,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
 	"reflect"
@@ -28,9 +29,8 @@ import (
 	"github.com/aws/smithy-go"
 	cleanhttp "github.com/hashicorp/go-cleanhttp"
 	"github.com/mitchellh/mapstructure"
-	logicaltest "github.com/openbao/openbao-plugins/internal/logical"
+	"github.com/openbao/openbao-plugins/internal/logicaltest"
 	mock_aws "github.com/openbao/openbao-plugins/secrets/aws/internal/mock"
-	"github.com/openbao/openbao/helper/testhelpers"
 	"github.com/openbao/openbao/sdk/v2/logical"
 	"go.uber.org/mock/gomock"
 )
@@ -47,7 +47,7 @@ func TestAcceptanceBackend_basic(t *testing.T) {
 	logicaltest.Test(t, logicaltest.TestCase{
 		AcceptanceTest: true,
 		PreCheck:       func() { testAccPreCheck(t) },
-		LogicalBackend: getBackend(t),
+		Backend:        getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfig(t),
 			testAccStepWritePolicy(t, "test", testDynamoPolicy),
@@ -66,7 +66,7 @@ func TestAcceptanceBackend_IamUserWithPermissionsBoundary(t *testing.T) {
 	logicaltest.Test(t, logicaltest.TestCase{
 		AcceptanceTest: true,
 		PreCheck:       func() { testAccPreCheck(t) },
-		LogicalBackend: getBackend(t),
+		Backend:        getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfig(t),
 			testAccStepWriteRole(t, "test", roleData),
@@ -96,7 +96,7 @@ func TestAcceptanceBackend_basicSTS(t *testing.T) {
 			log.Println("[WARN] Sleeping for 10 seconds waiting for AWS...")
 			time.Sleep(10 * time.Second)
 		},
-		LogicalBackend: getBackend(t),
+		Backend: getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfigWithCreds(t, accessKey),
 			testAccStepRotateRoot(t.Context(), accessKey),
@@ -125,7 +125,7 @@ func TestBackend_policyCrud(t *testing.T) {
 
 	logicaltest.Test(t, logicaltest.TestCase{
 		AcceptanceTest: false,
-		LogicalBackend: getBackend(t),
+		Backend:        getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfig(t),
 			testAccStepWritePolicy(t, "test", testDynamoPolicy),
@@ -950,7 +950,7 @@ func TestAcceptanceBackend_basicPolicyArnRef(t *testing.T) {
 	logicaltest.Test(t, logicaltest.TestCase{
 		AcceptanceTest: true,
 		PreCheck:       func() { testAccPreCheck(t) },
-		LogicalBackend: getBackend(t),
+		Backend:        getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfig(t),
 			testAccStepWriteArnPolicyRef(t, "test", ec2PolicyArn),
@@ -992,7 +992,7 @@ func TestAcceptanceBackend_iamUserManagedInlinePoliciesGroups(t *testing.T) {
 			testAccPreCheck(t)
 			createGroup(t, groupName, testS3Policy, []string{})
 		},
-		LogicalBackend: getBackend(t),
+		Backend: getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfig(t),
 			testAccStepWriteRole(t, "test", roleData),
@@ -1037,7 +1037,7 @@ func TestAcceptanceBackend_iamUserGroups(t *testing.T) {
 			createGroup(t, group1Name, testS3Policy, []string{ec2PolicyArn, iamPolicyArn})
 			createGroup(t, group2Name, testDynamoPolicy, []string{})
 		},
-		LogicalBackend: getBackend(t),
+		Backend: getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfig(t),
 			testAccStepWriteRole(t, "test", roleData),
@@ -1092,7 +1092,7 @@ func TestAcceptanceBackend_AssumedRoleWithPolicyDoc(t *testing.T) {
 			log.Println("[WARN] Sleeping for 10 seconds waiting for AWS...")
 			time.Sleep(10 * time.Second)
 		},
-		LogicalBackend: getBackend(t),
+		Backend: getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfig(t),
 			testAccStepWriteRole(t, "test", roleData),
@@ -1127,7 +1127,7 @@ func TestAcceptanceBackend_AssumedRoleWithPolicyARN(t *testing.T) {
 			log.Printf("[WARN] Sleeping for 10 seconds waiting for AWS...")
 			time.Sleep(10 * time.Second)
 		},
-		LogicalBackend: getBackend(t),
+		Backend: getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfig(t),
 			testAccStepWriteRole(t, "test", roleData),
@@ -1181,7 +1181,7 @@ func TestAcceptanceBackend_AssumedRoleWithGroups(t *testing.T) {
 			log.Println("[WARN] Sleeping for 10 seconds waiting for AWS...")
 			time.Sleep(10 * time.Second)
 		},
-		LogicalBackend: getBackend(t),
+		Backend: getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfig(t),
 			testAccStepWriteRole(t, "test", roleData),
@@ -1215,7 +1215,7 @@ func TestAcceptanceBackend_FederationTokenWithPolicyARN(t *testing.T) {
 			log.Println("[WARN] Sleeping for 10 seconds waiting for AWS...")
 			time.Sleep(10 * time.Second)
 		},
-		LogicalBackend: getBackend(t),
+		Backend: getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfigWithCreds(t, accessKey),
 			testAccStepWriteRole(t, "test", roleData),
@@ -1262,7 +1262,7 @@ func TestAcceptanceBackend_FederationTokenWithGroups(t *testing.T) {
 			log.Println("[WARN] Sleeping for 10 seconds waiting for AWS...")
 			time.Sleep(10 * time.Second)
 		},
-		LogicalBackend: getBackend(t),
+		Backend: getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfigWithCreds(t, accessKey),
 			testAccStepWriteRole(t, "test", roleData),
@@ -1301,7 +1301,7 @@ func TestAcceptanceBackend_RoleDefaultSTSTTL(t *testing.T) {
 			log.Println("[WARN] Sleeping for 10 seconds waiting for AWS...")
 			time.Sleep(10 * time.Second)
 		},
-		LogicalBackend: getBackend(t),
+		Backend: getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfig(t),
 			testAccStepWriteRole(t, "test", roleData),
@@ -1317,7 +1317,7 @@ func TestBackend_policyArnCrud(t *testing.T) {
 	t.Parallel()
 	logicaltest.Test(t, logicaltest.TestCase{
 		AcceptanceTest: false,
-		LogicalBackend: getBackend(t),
+		Backend:        getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfig(t),
 			testAccStepWriteArnPolicyRef(t, "test", ec2PolicyArn),
@@ -1376,7 +1376,7 @@ func TestBackend_iamGroupsCrud(t *testing.T) {
 	t.Parallel()
 	logicaltest.Test(t, logicaltest.TestCase{
 		AcceptanceTest: false,
-		LogicalBackend: getBackend(t),
+		Backend:        getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfig(t),
 			testAccStepWriteIamGroups(t, "test", []string{"group1", "group2"}),
@@ -1435,7 +1435,7 @@ func testAccStepReadIamGroups(t *testing.T, name string, groups []string) logica
 func TestBackend_iamTagsCrud(t *testing.T) {
 	logicaltest.Test(t, logicaltest.TestCase{
 		AcceptanceTest: false,
-		LogicalBackend: getBackend(t),
+		Backend:        getBackend(t),
 		Steps: []logicaltest.TestStep{
 			testAccStepConfig(t),
 			testAccStepWriteIamTags(t, "test", map[string]string{"key1": "value1", "key2": "value2"}),
@@ -1504,7 +1504,7 @@ func generateUniqueGroupName(prefix string) string {
 }
 
 func generateUniqueName(prefix string, maxLength int) string {
-	name := testhelpers.RandomWithPrefix(prefix)
+	name := fmt.Sprintf("%s-%d", prefix, rand.New(rand.NewSource(time.Now().UnixNano())).Int())
 	if len(name) > maxLength {
 		return name[:maxLength]
 	}
