@@ -73,6 +73,7 @@ github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3
 github.com/HdrHistogram/hdrhistogram-go v1.1.2/go.mod h1:yDgFjdqOqDEKOvasDdhWNXYg9BVp4O+o5f6V/ehm6Oo=
 github.com/Microsoft/go-winio v0.6.2 h1:F2VQgta7ecxGYO8k3ZZz3RS8fVIXVxONVUPlNERoyfY=
 github.com/Microsoft/go-winio v0.6.2/go.mod h1:yd8OoFMLzJbo9gZq8j5qaps8bJ9aShtEA8Ipt1oGCvU=
+github.com/RaveNoX/go-jsoncommentstrip v1.0.0/go.mod h1:78ihd09MekBnJnxpICcwzCMzGrKSKYe4AqU6PDYYpjk=
 github.com/ajstarks/svgo v0.0.0-20180226025133-644b8db467af/go.mod h1:K08gAheRH3/J6wwsYMMT4xOr94bZjxIelGM0+d/wbFw=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
@@ -83,8 +84,6 @@ github.com/alexbrainman/sspi v0.0.0-20250919150558-7d374ff0d59e h1:4dAU9FXIyQktp
 github.com/alexbrainman/sspi v0.0.0-20250919150558-7d374ff0d59e/go.mod h1:cEWa1LVoE5KvSD9ONXsZrj0z6KqySlCCNKHlLzbqAt4=
 github.com/aliyun/alibaba-cloud-sdk-go v1.63.12 h1:O/lpYuNJlb5ed/QIJUDE1yJBh6zPF5ZFToiuGpq91Ds=
 github.com/aliyun/alibaba-cloud-sdk-go v1.63.12/go.mod h1:SOSDHfe1kX91v3W5QiBsWSLqeLxImobbMX1mxrFHsVQ=
-github.com/antlr4-go/antlr/v4 v4.13.0 h1:lxCg3LAv+EUK6t1i0y1V6/SLeUi0eKEKdhQAlS8TVTI=
-github.com/antlr4-go/antlr/v4 v4.13.0/go.mod h1:pfChB/xh/Unjila75QW7+VU4TSnWnnk9UTnmpPaOR2g=
 github.com/apapsch/go-jsonmerge/v2 v2.0.0 h1:axGnT1gRIfimI7gJifB699GoE/oq+F2MU7Dml6nw9rQ=
 github.com/apapsch/go-jsonmerge/v2 v2.0.0/go.mod h1:lvDnEdqiQrp0O42VQGgmlKpxL1AP2+08jFMw88y4klk=
 github.com/armon/circbuf v0.0.0-20150827004946-bbbad097214e/go.mod h1:3U/XgcO3hCbHZ8TKRvWD2dDTCfh9M9ya+I9JpbB7O8o=
@@ -147,6 +146,7 @@ github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24
 github.com/beorn7/perks v1.0.0/go.mod h1:KWe93zE9D1o94FZ5RNwFwVgaQK1VOXiVxmqh+CedLV8=
 github.com/beorn7/perks v1.0.1/go.mod h1:G2ZrVWU2WbWT9wwq4/hrbKbnv/1ERSJQ0ibhJ6rlkpw=
 github.com/bgentry/speakeasy v0.1.0/go.mod h1:+zsyZBPWlz7T6j88CTgSN5bM796AkVf0kBD4zp0CCIs=
+github.com/bmatcuk/doublestar v1.1.1/go.mod h1:UD6OnuiIn0yFxxA2le/rnRU1G4RaI4UvFv1sNto9p6w=
 github.com/bufbuild/protocompile v0.14.1 h1:iA73zAf/fyljNjQKwYzUHD6AD4R8KMasmwa/FBatYVw=
 github.com/bufbuild/protocompile v0.14.1/go.mod h1:ppVdAIhbr2H8asPk6k4pY7t9zB1OU5DoEw9xY/FUi1c=
 github.com/cenkalti/backoff/v4 v4.3.0 h1:MyRJ/UdXutAwSAT+s3wNd7MfTIcy71VQueUuFK343L8=
@@ -391,6 +391,7 @@ github.com/json-iterator/go v1.1.10/go.mod h1:KdQUCv79m/52Kvf8AW2vK1V8akMuk1QjK/
 github.com/json-iterator/go v1.1.11/go.mod h1:KdQUCv79m/52Kvf8AW2vK1V8akMuk1QjK/uOdHXbAo4=
 github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnrnM=
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
+github.com/juju/gnuflag v0.0.0-20171113085948-2ce1bb71843d/go.mod h1:2PavIy+JPciBPrBUjwbNvtwB6RQlve+hkpll6QSNmOE=
 github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
 github.com/julienschmidt/httprouter v1.3.0/go.mod h1:JR6WtHb+2LUe8TCKY3cZOxFyyO8IZAc4RVcycCCAKdM=
 github.com/jung-kurt/gofpdf v1.0.3-0.20190309125859-24315acbbda5/go.mod h1:7Id9E/uU8ce6rXgefFLlgrJj/GYY22cpxn+r32jIOes=
@@ -502,8 +503,6 @@ github.com/openbao/go-kms-wrapping/plugin/v2 v2.3.0 h1:LxZHcCv8S3888OSAKs2n0rPur
 github.com/openbao/go-kms-wrapping/plugin/v2 v2.3.0/go.mod h1:BSu5AczP5Y/8a/VDoBv/+aIooj09axNPVg/XYq9u2AQ=
 github.com/openbao/go-kms-wrapping/v2 v2.8.0 h1:9gXkCmcMadJO2Ozf9TNTIInSqdOwAD6k3HhHMhIqzrs=
 github.com/openbao/go-kms-wrapping/v2 v2.8.0/go.mod h1:KyL1nfZM8SzLgMchvFU2F5jS/XlauD3TRCjmILLErh4=
-github.com/openbao/go-kms-wrapping/v2 v2.8.0 h1:9gXkCmcMadJO2Ozf9TNTIInSqdOwAD6k3HhHMhIqzrs=
-github.com/openbao/go-kms-wrapping/v2 v2.8.0/go.mod h1:KyL1nfZM8SzLgMchvFU2F5jS/XlauD3TRCjmILLErh4=
 github.com/openbao/go-kms-wrapping/wrappers/alicloudkms/v2 v2.3.0 h1:RhTCVY+QnUNP/URMKz4kWYHt+6ppAYEC1LbOgt8l8d0=
 github.com/openbao/go-kms-wrapping/wrappers/alicloudkms/v2 v2.3.0/go.mod h1:3GLoNvJvwsFgr3rnohIVfE9GbpICJVvSACO/z/B1IgE=
 github.com/openbao/go-kms-wrapping/wrappers/awskms/v2 v2.5.0 h1:Ez91i4H9PeuCJ9ASkWbt0sUItEkEVRkM7v97D5YaiEA=
@@ -534,6 +533,8 @@ github.com/opentracing/opentracing-go v1.2.1-0.20220228012449-10b1cf09e00b h1:Ff
 github.com/opentracing/opentracing-go v1.2.1-0.20220228012449-10b1cf09e00b/go.mod h1:AC62GU6hc0BrNm+9RK9VSiwa/EUe1bkIeFORAMcHvJU=
 github.com/oracle/oci-go-sdk/v60 v60.0.0 h1:EJAWjEi4SY5Raha6iUzq4LTQ0uM5YFw/wat/L1ehIEM=
 github.com/oracle/oci-go-sdk/v60 v60.0.0/go.mod h1:krz+2gkSzlSL/L4PvP0Z9pZpag9HYLNtsMd1PmxlA2w=
+github.com/ovh/okms-sdk-go v0.5.2 h1:5ppQ+Ugfw5eG6Q8PEgqKcUc8rIdlLZTELEZdqlFkGyc=
+github.com/ovh/okms-sdk-go v0.5.2/go.mod h1:uUmv80Z8cfHwhnZQn2pUtYCL8EOMvtXXnIPVu+FXZhc=
 github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
 github.com/pascaldekloe/goe v0.1.0 h1:cBOtyMzM9HTpWjXfbbunk26uA6nG3a8n06Wieeh0MwY=
 github.com/pascaldekloe/goe v0.1.0/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
@@ -591,6 +592,7 @@ github.com/sirupsen/logrus v1.9.3/go.mod h1:naHLuLoDiP4jHNo9R0sCBMtWGeIprob74mVs
 github.com/sony/gobreaker v0.4.2-0.20210216022020-dd874f9dd33b/go.mod h1:ZKptC7FHNvhBz7dN2LGjPVBz2sZJmc0/PkyDJOjmxWY=
 github.com/sony/gobreaker v0.5.0 h1:dRCvqm0P490vZPmy7ppEk2qCnCieBooFJ+YoXGYB+yg=
 github.com/sony/gobreaker v0.5.0/go.mod h1:ZKptC7FHNvhBz7dN2LGjPVBz2sZJmc0/PkyDJOjmxWY=
+github.com/spkg/bom v0.0.0-20160624110644-59b7046e48ad/go.mod h1:qLr4V1qq6nMqFKkMo8ZTx3f+BZEkzsRUY10Xsm2mwU0=
 github.com/std-uritemplate/std-uritemplate/go/v2 v2.0.3 h1:7hth9376EoQEd1hH4lAp3vnaLP2UMyxuMMghLKzDHyU=
 github.com/std-uritemplate/std-uritemplate/go/v2 v2.0.3/go.mod h1:Z5KcoM0YLC7INlNhEezeIZ0TZNYf7WSNO0Lvah4DSeQ=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
