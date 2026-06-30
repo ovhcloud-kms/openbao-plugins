@@ -61,7 +61,7 @@ require (
 	github.com/openbao/go-kms-wrapping/wrappers/azurekeyvault/v2 v2.4.0
 	github.com/openbao/go-kms-wrapping/wrappers/gcpckms/v2 v2.3.0
 	github.com/openbao/go-kms-wrapping/wrappers/ocikms/v2 v2.3.0
-	github.com/openbao/go-kms-wrapping/wrappers/okms/v2 v2.0.0-00010101000000-000000000000
+	github.com/openbao/go-kms-wrapping/wrappers/ovhcloudkms/v2 v2.0.0
 	github.com/openbao/go-kms-wrapping/wrappers/pkcs11/v2 v2.6.0
 	github.com/openbao/go-kms-wrapping/wrappers/tcloudpublickms/v2 v2.0.0
 	github.com/openbao/openbao/api/v2 v2.5.1

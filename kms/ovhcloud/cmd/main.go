@@ -6,13 +6,13 @@ package main
 import (
 	"github.com/openbao/go-kms-wrapping/plugin/v2"
 	"github.com/openbao/go-kms-wrapping/v2"
-	"github.com/openbao/go-kms-wrapping/wrappers/okms/v2"
+	"github.com/openbao/go-kms-wrapping/wrappers/ovhcloudkms/v2"
 )
 
 func main() {
 	plugin.Serve(&plugin.ServeOpts{
 		WrapperFactoryFunc: func() wrapping.Wrapper {
-			return okms.NewWrapper()
+			return ovhcloudkms.NewWrapper()
 		},
 	})
 }
